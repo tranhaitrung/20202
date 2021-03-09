@@ -15,7 +15,7 @@ public class ConnectionMySQL {
     private static String username = "root";
     private static String password = "01072000";
 
-    public static Connection connect(String dbURL, String username, String password){
+    public static Connection connect(){
         try {
             Class.forName("com.mysql.jdbc.Driver");
             Connection connection = DriverManager.getConnection(dbURL, username,password );
@@ -49,7 +49,7 @@ public class ConnectionMySQL {
 
     public static boolean insertCountry(CountryModel countryModel){
         try {
-            Connection connection = ConnectionMySQL.connect(dbURL, username, password);
+            Connection connection = ConnectionMySQL.connect();
             String sql = "INSERT INTO COUNTRY VALUES (?, ?, ?, ?, ?, ?, ?)";
             PreparedStatement preStatment = connection.prepareStatement(sql);
             preStatment.setString(1, countryModel.getCode());

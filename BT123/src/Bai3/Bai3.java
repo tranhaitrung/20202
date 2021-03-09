@@ -18,6 +18,7 @@ public class Bai3 {
         Callable<Map<String, Integer>> callable;
         Future<Map<String, Integer>> future;
         ExecutorService executor = Executors.newFixedThreadPool(6);
+
         for(String f:files){
             callable = new CallAb(f);
             future = executor.submit(callable);
@@ -35,5 +36,6 @@ public class Bai3 {
         for(String k : key){
             printWriter.write(k + " : " + map.get(k) + "\n");
         }
+        printWriter.close();
     }
 }

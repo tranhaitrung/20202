@@ -13,6 +13,10 @@ public class CityModel {
         this.countryCode = countryCode;
     }
 
+    public CityModel() {
+
+    }
+
     public int getId() {
         return id;
     }

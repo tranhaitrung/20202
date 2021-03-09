@@ -7,6 +7,7 @@ import java.util.Map;
 import java.util.StringTokenizer;
 import java.util.TreeMap;
 import java.util.concurrent.Callable;
+import java.util.concurrent.TimeUnit;
 
 public class CallAb implements Callable {
     private String pathFile;
@@ -20,6 +21,7 @@ public class CallAb implements Callable {
         InputStream in;
         BufferedReader fileReader = new BufferedReader(new FileReader(pathFile));
 
+//        System.out.println("Start read FILE: " +pathFile);
         Map<String, Integer> map = new TreeMap<>();
 
         String str;
@@ -36,6 +38,8 @@ public class CallAb implements Callable {
                 }
             }
         }
+
+//        TimeUnit.SECONDS.sleep(2);
 
         System.out.println("Done File : " + pathFile);
         return map;
