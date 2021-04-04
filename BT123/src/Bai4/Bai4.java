@@ -29,7 +29,7 @@ public class Bai4 {
         Collections.shuffle(list);
 
         try {
-            File file = new File("D:/20202/TT20202/WEEEK_1/BT123/recoures/Output4.txt");
+            File file = new File("BT123/recoures/Output4.txt");
             FileWriter fw = new FileWriter(file);
             fw.write("SIZE = " + list.size() + "\n");
             for(Point p:list){

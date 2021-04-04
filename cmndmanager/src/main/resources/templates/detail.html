@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Chi tiết</title>
+</head>
+<body>
+    <ul th:object="${CMND}">
+        <li>Mã CMND<span th:text="*{code}"></span></li>
+        <li>Họ và tên : <span th:text="*{name}"></span></li>
+        <li>Ngày sinh : <span th:text="*{dob}"></span></li>
+        <li>Địa chỉ : <span th:text="*{address}"></span></li>
+        <li>Nghề nghiệp : <span th:text="*{job}"></span></li>
+    <a th:href="@{/updateCMND?id={id}(id=*{code})}"> Sửa thông tin</a>
+    <a th:href="@{/deleteCMND?id={id}(id=*{code})}">Xóa CMND</a>
+    </ul>
+</body>
+</html>

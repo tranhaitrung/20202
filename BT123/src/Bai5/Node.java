@@ -34,6 +34,7 @@ public class Node {
         return false;
     }
 
+
     @Override
     public int hashCode(){
         return this.getX()*21 + this.getY();

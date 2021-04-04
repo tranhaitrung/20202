@@ -6,22 +6,24 @@ import BT_MySQL.Service.CityService;
 import BT_MySQL.Service.CountryService;
 
 import java.io.IOException;
-import java.sql.*;
-import java.util.ArrayList;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
 import java.util.List;
 
 public class ConnectionMySQL {
     private static String dbURL= "jdbc:mysql://localhost:3306/thuctap";
     private static String username = "root";
-    private static String password = "01072000";
+    private static String password = "";
 
     public static Connection connect(){
         try {
-            Class.forName("com.mysql.jdbc.Driver");
+//            Class.forName("com.mysql.jdbc.Driver");
             Connection connection = DriverManager.getConnection(dbURL, username,password );
             System.out.println("Connected database successfull!");
             return connection;
-        } catch (SQLException | ClassNotFoundException e) {
+        } catch (SQLException e) {
             e.printStackTrace();
         }
         return null;
@@ -81,15 +83,15 @@ public class ConnectionMySQL {
         CityService cityService = new CityService();
         listCity = cityService.getListCity();
 
-        for (CountryModel c: listCountry){
-            boolean b = insertCountry(c);
-            if(b){
-                System.out.println("Thêm thành công "+c.getNameCountry());
-            }
-            else{
-                System.out.println("Thất bại ");
-            }
-        }
+//        for (CountryModel c: listCountry){
+//            boolean b = insertCountry(c);
+//            if(b){
+//                System.out.println("Thêm thành công "+c.getNameCountry());
+//            }
+//            else{
+//                System.out.println("Thất bại ");
+//            }
+//        }
 
         for (CityModel c:listCity){
 //            System.out.println(c.toString());

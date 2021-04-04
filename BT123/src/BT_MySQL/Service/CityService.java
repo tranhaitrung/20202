@@ -2,7 +2,6 @@ package BT_MySQL.Service;
 
 import BT_MySQL.Model.CityModel;
 
-import javax.imageio.metadata.IIOMetadataNode;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
@@ -21,7 +20,7 @@ public class CityService {
 
     public CityService() throws IOException {
         listCity = new ArrayList<>();
-        File file = new File("D:/20202/TT20202/WEEEK_1/BT123/recoures/Bai8/cities.dat");
+        File file = new File("BT123/recoures/Bai8/cities.dat");
         BufferedReader fr = new BufferedReader(new FileReader(file));
         String readline;
         while ((readline = fr.readLine()) != null){

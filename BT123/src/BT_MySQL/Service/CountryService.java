@@ -19,7 +19,7 @@ public class CountryService {
 
     private List<CountryModel> listCountry;
     public CountryService() throws IOException {
-        File file = new File("D:/20202/TT20202/WEEEK_1/BT123/recoures/Bai8/countries.dat");
+        File file = new File("BT123/recoures/Bai8/countries.dat");
         BufferedReader fr = new BufferedReader(new FileReader(file));
         listCountry = new ArrayList<>();
         String line;

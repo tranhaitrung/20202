@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>CMND Manager</title>
+    <link rel="stylesheet" href="../static/css.css">
+    <style>
+        table, th, td{
+            border-top:1px solid #ccc;
+            border-bottom:1px solid #ccc;
+            padding: 10px;
+        }
+        table{
+            border-collapse:collapse;
+        }
+        tr:hover{
+            background-color:#ddd;
+            cursor:pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1 style="align-content: center">QUẢN LÝ CHỨNG MINH NHÂN DÂN</h1>
+    <br/>
+    <h3 th:text="${notification}"></h3>
+    <br/>
+    <a href="/addCMND"> <button> Thêm CMND mới </button> </a>
+
+    <table>
+        <tr>
+            <th>Số CMND</th>
+            <th>Họ và Tên</th>
+            <th>Ngày sinh</th>
+            <th>Địa chỉ</th>
+            <th>Nghề nghiệp</th>
+        </tr>
+
+        <div th:each="cmnd :${listCMND}">
+            <a th:href="@{/detail?id={id}(id=*{cmnd.code})}">
+        <tr>
+
+            <td><a th:href="@{/detail?id={id}(id=*{cmnd.code})}"><span th:text="*{cmnd.getCode()}"></span></a></td>
+            <td th:text="*{cmnd.getName()}"></td>
+            <td th:text="*{cmnd.getDob()}"></td>
+            <td th:text="*{cmnd.getAddress()}"></td>
+            <td th:text="*{cmnd.getJob()}"></td>
+
+        </tr>
+        </a></div>
+    </table>
+
+</body>
+</html>

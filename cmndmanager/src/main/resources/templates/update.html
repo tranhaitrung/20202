@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Sửa thông tin</title>
+</head>
+<body>
+<form action="/updateCMND" th:object="${CMND}" method="post">
+<h1> Sửa thông tin CMND số <span th:text="*{code}"></span></h1>
+    <p>CMND/CCCD : <input th:field="*{code}"></p>
+    <p>Họ và tên : <input type="text" th:field="*{name}"></p>
+    <p>Ngày sinh : <input type="date" th:field="*{dob}"></p>
+    <p>Địa chỉ : <input type="text" th:field="*{address}"></p>
+    <p>Nghề nghiệp :  <input type="text" th:field="*{job}"></p>
+    <button type="submit" name="update">Thay đổi</button>
+</form>
+</body>
+</html>

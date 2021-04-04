@@ -19,6 +19,10 @@ public class CountryModel {
         this.cappital = cappital;
     }
 
+    public CountryModel() {
+
+    }
+
     public String getCode() {
         return code;
     }

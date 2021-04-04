@@ -5,8 +5,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class RFolder {
-    private List<String> listPathFile;
-    private String pathFolder;
+    private final List<String> listPathFile;
+    private final String pathFolder;
 
     public RFolder(String path){
         listPathFile = new ArrayList<String>();
@@ -25,6 +25,7 @@ public class RFolder {
 
     public List<String> getListPathFile(){
         setListPathFile();
+        System.out.println("Size " + listPathFile.size());
         return  listPathFile;
     }
 }

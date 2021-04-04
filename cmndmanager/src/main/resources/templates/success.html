@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Thành công</title>
+</head>
+<body>
+    <h1 th:text="${notice}"> </h1>
+
+    <ul th:object="${CMND}">
+        <li>Mã CMND/CCCD : <span th:text="*{code}"></span></li>
+        <li>Họ và tên : <span th:text="*{name}"></span></li>
+        <li>Ngày sinh : <span th:text="*{dob}"></span></li>
+        <li>Địa chỉ : <span th:text="*{address}"></span></li>
+        <li>Nghề nghiệp : <span th:text="*{job}"></span></li>
+    </ul>
+
+    <a href="/addCMND"><button>+Thêm CMND</button></a>
+    <a href="/"><button>Xem danh sách</button></a>
+</body>
+</html>

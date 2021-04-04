@@ -14,7 +14,7 @@ public class Transaction {
             cnn.setAutoCommit(false);
             String sql = "INSERT INTO COUNTRY VALUES (?, ?, ?, ?, ?, ?, ?)";
             PreparedStatement pstmt = cnn.prepareStatement(sql);
-            String code = "VN";
+            String code = "NVV";
             String name = "VietNam";
             String continent = "Asea";
             double surface = 122443.3;
@@ -34,7 +34,7 @@ public class Transaction {
             if(rowAffected > 0){
                 String sqlCity = "INSERT INTO CITY VALUES (?,?,?,?)";
                 PreparedStatement psCity = cnn.prepareStatement(sqlCity);
-                int id = 84848484;
+                int id = 84848485;
                 String nameCity = "Ha Noi";
                 int populationCity = 10000000;
                 String codeCountry = "VN";

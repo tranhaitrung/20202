@@ -3,7 +3,6 @@ package BT_MySQL.Demo;
 import BT_MySQL.DAO.ConnectionMySQL;
 import BT_MySQL.Model.CityModel;
 
-import java.lang.reflect.Parameter;
 import java.sql.*;
 import java.util.Scanner;
 

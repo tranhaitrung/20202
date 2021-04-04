@@ -16,42 +16,32 @@ public class Bai1 {
         int cnt = 0;
         Random generator = new Random();
 
-        //tạo tập set thứ nhất
-        while (cnt < 200000){
-            int tmp = generator.nextInt( );
+        while(cnt < 10){
+            int tmp = generator.nextInt();
             if(setA.contains(tmp) == false){
                 setA.add(tmp);
-                cnt++;
-            }
-
-        }
-        cnt = 0;
-        //tạo tập set thứ 2
-        int c=0; // kiểm tra xem tập B có phần tử trùng với A hay không
-        while (cnt < 200000){
-            int tmp = generator.nextInt( );
-            if(setB.contains(tmp) == false){
                 setB.add(tmp);
                 cnt++;
-                if(setA.contains(tmp)==true){
-                    c++;
-                }
             }
-        }
 
-        //nếu chưa có phần tử trùng thì tạo lại tập B
-        while (c==0){
-            setB.clear();
-            cnt = 0;
-            while (cnt < 200000){
-                int tmp = generator.nextInt( );
-                if(setB.contains(tmp) == false){
-                    setB.add(tmp);
-                    cnt++;
-                    if(setA.contains(tmp)==true){
-                        c++;
-                    }
-                }
+        }
+        int cntA = cnt;
+        int cntB = cnt;
+        //tạo tập set thứ nhất
+        while (cntA < 200000){
+            int tmp = generator.nextInt();
+            if(setA.contains(tmp) == false){
+                setA.add(tmp);
+                cntA++;
+            }
+
+        }
+        //tạo tập set thứ 2
+        while (cntB < 200000){
+            int tmp = generator.nextInt( );
+            if(!setB.contains(tmp)){
+                setB.add(tmp);
+                cnt++;
             }
         }
 
@@ -64,7 +54,7 @@ public class Bai1 {
         for (Integer tmp:setA){
             if(setB.contains(tmp) == true){
                 setC.add(tmp);
-                setB.remove(tmp);
+//                setB.remove(tmp);
             }
         }
 
@@ -80,7 +70,7 @@ public class Bai1 {
         }
 
         try {
-            File f = new File("D:/20202/TT20202/WEEEK_1/BT123/recoures/Bai1.txt");
+            File f = new File("BT123/recoures/Bai1.txt");
             FileWriter fw = new FileWriter(f);
             fw.write("Tập A: \n");
             for(Integer tmp:setA){
